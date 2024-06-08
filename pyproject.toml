@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "treatment-checker"
+version = "0.1.0"
+description = ""
+authors = ["Stephen Lalor <stephen.lalor.work@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain = "^0.2.3"
+numpy = "^1.26.4"
+python-dotenv = "^1.0.1"
+langchain-openai = "^0.1.8"
+tiktoken = "^0.7.0"
+langchain-community = "^0.2.4"
+langchain-core = "^0.2.5"
+bs4 = "^0.0.2"
+langchainhub = "^0.1.18"
+langchain-text-splitters = "^0.2.1"
+invoke = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
