@@ -2,6 +2,7 @@
 Main script to build the databases required by the project.
 """
 
+from dotenv import load_dotenv
 from loguru import logger
 
 from treatment_checker.build_db.build_drug_db import (
@@ -14,6 +15,7 @@ from treatment_checker.utils import read_json
 
 def build_db():
     # Set up logging and configuration.
+    load_dotenv()
     logfile = "data/logs/build_db.log"
     logger.add(logfile, colorize=True, enqueue=True, mode="w")
     db_cfg = read_json("treatment_checker/build_db/db_cfg.json")
