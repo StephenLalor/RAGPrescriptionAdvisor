@@ -156,3 +156,4 @@ cython_debug/
 
 # Project specific.
 data/vector_stores
+tmp.py
