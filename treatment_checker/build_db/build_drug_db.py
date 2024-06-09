@@ -40,7 +40,7 @@ def split_drug_data_docs(
 
 def docs_to_vectorstore(
     docs: list[Document], open_ai_mdl: str, db_path: str, name: str
-) -> Chroma:
+) -> None:
     """
     Create local vector store using Chroma with docs and their embeddings.
     """

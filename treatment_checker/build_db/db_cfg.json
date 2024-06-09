@@ -7,7 +7,7 @@
         "https://www.drugs.com/ibuprofen.html"
     ],
     "embedding_model": "text-embedding-ada-002",
-    "drug_db_dir": "data/logs/vector_stores",
+    "drug_db_dir": "data/vector_stores",
     "drugs_db_name": "drugs_db",
     "drugs_db_chunk_size": 300,
     "drugs_db_chunk_overlap": 50
