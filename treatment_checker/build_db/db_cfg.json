@@ -1,0 +1,14 @@
+{
+    "drug_info_urls": [
+        "https://www.drugs.com/aspirin.html",
+        "https://www.drugs.com/paracetamol.html",
+        "https://www.drugs.com/warfarin.html",
+        "https://www.drugs.com/amoxicillin.html",
+        "https://www.drugs.com/ibuprofen.html"
+    ],
+    "embedding_model": "text-embedding-ada-002",
+    "drug_db_dir": "data/logs/vector_stores",
+    "drugs_db_name": "drugs_db",
+    "drugs_db_chunk_size": 300,
+    "drugs_db_chunk_overlap": 50
+}
