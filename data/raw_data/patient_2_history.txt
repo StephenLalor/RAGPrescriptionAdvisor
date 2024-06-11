@@ -1,0 +1,13 @@
+Patient ID 002
+
+1978
+Patient experienced a severe allergic reaction to penicillin.
+Noted in the patient's medical record for future reference to avoid prescribing medications containing penicillin.
+
+1990
+Patient underwent successful gallbladder removal surgery.
+The post-operative period was uneventful, and the patient recovered well.
+
+2019
+Patient underwent a hip replacement surgery.
+The surgery was successful and the patient responded well to paracetamol for pain management during the recovery period.

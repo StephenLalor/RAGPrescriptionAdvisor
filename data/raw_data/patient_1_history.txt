@@ -1,0 +1,13 @@
+Patient ID 001
+
+2017
+Patient was pregnant and successfully delivered a healthy baby. Patient breastfed the baby throughout the year.
+Regular prenatal and postnatal check-ups were conducted, and both mother and baby showed good health.
+
+2019
+Patient presented with symptoms of an ear infection. Prescribed a course of antibiotics and ibuprofen for pain management.
+Patient reported that ibuprofen was not effective in managing the pain. Adjusted the pain management strategy accordingly.
+
+2022
+Patient contracted a severe case of the flu. Symptoms included high fever, chills, and fatigue.
+Prescribed antiviral medication and advised rest and hydration. The patient recovered after two weeks.

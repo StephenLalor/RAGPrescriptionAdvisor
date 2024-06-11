@@ -1,0 +1,14 @@
+Patient ID 003
+
+2018
+Patient was diagnosed with hypertension and was experiencing headaches.
+Initiated treatment for hypertension and monitored the patient's condition closely.
+
+2021
+Patient sustained a foot injury.
+After initial treatment for the injury, the patient required physical therapy for rehabilitation.
+The therapy was successful, and the patient regained full mobility.
+
+2024
+Patient became pregnant and is currently expecting their first child.
+Regular prenatal check-ups are being conducted to ensure the health of both the mother and the baby.

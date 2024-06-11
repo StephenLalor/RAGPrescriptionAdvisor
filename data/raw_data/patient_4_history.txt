@@ -1,0 +1,23 @@
+Patient ID 004
+
+2018
+Patient was diagnosed with a history of intestinal bleeding.
+Regular check-ups were conducted to monitor the patient’s condition.
+The patient was advised to follow a specific diet to manage the condition.
+
+2020
+Patient presented with symptoms of a urinary tract infection.
+Prescribed a course of antibiotics and paracetamol for pain management.
+Patient reported that paracetamol was effective in managing the pain.
+
+2023
+Patient contracted a mild case of the flu.
+Symptoms included low fever, mild chills, and fatigue.
+Prescribed antiviral medication and advised rest and hydration. The patient recovered after one week.
+
+2024
+The patient’s intestinal bleeding condition worsened.
+The patient was admitted to the hospital for further treatment and monitoring.
+After a successful treatment plan, the patient’s condition improved and they were discharged from the hospital.
+The patient continues to follow a specific diet and medication to manage the condition.
+Regular check-ups are scheduled to monitor the patient’s health.
