@@ -5,9 +5,7 @@ Functions for scraping, parsing and embedding drugs data to a vector store.
 from bs4 import SoupStrainer
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_community.vectorstores.chroma import Chroma
 from langchain_core.documents import Document
-from langchain_openai import OpenAIEmbeddings
 from loguru import logger
 
 
@@ -36,21 +34,3 @@ def split_drug_data_docs(
     split_docs = text_splitter.split_documents(docs)  # Splits of chunk_size tokens.
     logger.info(f"Split into {len(split_docs)} docs.")
     return split_docs
-
-
-def docs_to_vectorstore(
-    docs: list[Document], open_ai_mdl: str, db_path: str, name: str
-) -> None:
-    """
-    Create local vector store using Chroma with docs and their embeddings.
-    """
-    logger.info(f"Creating Chroma store with docs and embeddings using {open_ai_mdl}.")
-    embedding_mdl = OpenAIEmbeddings(model=open_ai_mdl)
-    Chroma.from_documents(
-        documents=docs,
-        embedding=embedding_mdl,
-        persist_directory=db_path,
-        collection_name=name,
-    )
-    logger.info(f"Chroma vector store {name} created in {db_path}.")
-    return

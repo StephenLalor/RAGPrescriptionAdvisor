@@ -1,14 +1,35 @@
 {
-    "drug_info_urls": [
-        "https://www.drugs.com/aspirin.html",
-        "https://www.drugs.com/paracetamol.html",
-        "https://www.drugs.com/warfarin.html",
-        "https://www.drugs.com/amoxicillin.html",
-        "https://www.drugs.com/ibuprofen.html"
-    ],
-    "embedding_model": "text-embedding-ada-002",
-    "drug_db_dir": "data/vector_stores",
-    "drugs_db_name": "drugs_db",
-    "drugs_db_chunk_size": 300,
-    "drugs_db_chunk_overlap": 50
+    "embedding_model": {
+        "name": "text-embedding-ada-002",
+        "context_window": 4096
+    },
+    "drugs": {
+        "urls": [
+            "https://www.drugs.com/aspirin.html",
+            "https://www.drugs.com/paracetamol.html",
+            "https://www.drugs.com/warfarin.html",
+            "https://www.drugs.com/amoxicillin.html",
+            "https://www.drugs.com/ibuprofen.html"
+        ],
+        "db": {
+            "dir": "data/vector_stores/drugs_db",
+            "name": "drugs_db",
+            "chunk_size": 300,
+            "chunk_overlap": 50,
+            "num_return": 3
+        }
+    },
+    "patient_hist": {
+        "paths": [
+            "data/raw_data/patient_1_history.txt",
+            "data/raw_data/patient_2_history.txt",
+            "data/raw_data/patient_3_history.txt",
+            "data/raw_data/patient_4_history.txt"
+        ],
+        "db": {
+            "dir": "data/vector_stores/patient_history_db",
+            "name": "patient_history_db",
+            "num_return": 1
+        }
+    }
 }
