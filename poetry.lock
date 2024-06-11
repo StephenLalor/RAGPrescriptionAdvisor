@@ -601,6 +601,46 @@ trio = ["trio (>=0.23)"]
 wmi = ["wmi (>=1.5.1)"]
 
 [[package]]
+name = "docarray"
+version = "0.40.0"
+description = "The data structure for multimodal data"
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "docarray-0.40.0-py3-none-any.whl", hash = "sha256:86ceadb84cdec2dc9579e2f79823748a3af094c57df4e0441c5f0bac7e63ef97"},
+    {file = "docarray-0.40.0.tar.gz", hash = "sha256:c3f3b88b7b6128c10308dddbd21650c9845e270da850cf6718cb1d3d867d5986"},
+]
+
+[package.dependencies]
+numpy = ">=1.17.3"
+orjson = ">=3.8.2"
+pydantic = ">=1.10.8"
+rich = ">=13.1.0"
+types-requests = ">=2.28.11.6"
+typing-inspect = ">=0.8.0"
+
+[package.extras]
+audio = ["pydub (>=0.25.1,<0.26.0)"]
+aws = ["smart-open[s3] (>=6.3.0)"]
+elasticsearch = ["elastic-transport (>=8.4.0,<9.0.0)", "elasticsearch (>=7.10.1)"]
+epsilla = ["pyepsilla (>=0.2.3)"]
+full = ["av (>=10.0.0)", "jax (>=0.4.10)", "lz4 (>=1.0.0)", "pandas (>=1.1.0)", "pillow (>=9.3.0)", "protobuf (>=3.20.0)", "pydub (>=0.25.1,<0.26.0)", "trimesh[easy] (>=3.17.1)", "types-pillow (>=9.3.0.1)"]
+hnswlib = ["hnswlib (>=0.7.0)", "protobuf (>=3.20.0)"]
+image = ["pillow (>=9.3.0)", "types-pillow (>=9.3.0.1)"]
+jac = ["jina-hubble-sdk (>=0.34.0)"]
+jax = ["jax (>=0.4.10)"]
+mesh = ["trimesh[easy] (>=3.17.1)"]
+milvus = ["pymilvus (>=2.2.12,<3.0.0)"]
+pandas = ["pandas (>=1.1.0)"]
+proto = ["lz4 (>=1.0.0)", "protobuf (>=3.20.0)"]
+qdrant = ["qdrant-client (>=1.4.0)"]
+redis = ["redis (>=4.6.0,<5.0.0)"]
+torch = ["torch (>=1.0.0)"]
+video = ["av (>=10.0.0)"]
+weaviate = ["weaviate-client (>=3.17,<3.18)"]
+web = ["fastapi (>=0.100.0)"]
+
+[[package]]
 name = "email-validator"
 version = "2.1.1"
 description = "A robust email address syntax and deliverability validation library."
@@ -3615,4 +3655,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "0ddbc09d53f30fdc27286e20a40945f741942cf36f7816c51fc9b780a0839911"
+content-hash = "84405d9e789626f4a5cd9cb66f9357e0be8bf97c4b7a31952517f1fbe406bc5f"
