@@ -8,6 +8,7 @@ from langchain.load import dumps, loads
 from langchain_core.documents import Document
 from langchain_core.runnables import Runnable
 from langchain_core.vectorstores import VectorStoreRetriever
+from loguru import logger
 
 
 def get_unique_union(docs: list[list]) -> list[Document]:
@@ -16,7 +17,9 @@ def get_unique_union(docs: list[list]) -> list[Document]:
     """
     # For all returned documents, cast them to JSON so we can use set to dedupe.
     flat_json_docs = [dumps(doc) for sublist in docs for doc in sublist]
+    logger.info(f"Getting unique union of {len(flat_json_docs)} docs.")
     unq_json_docs = list(set(flat_json_docs))
+    logger.info(f"Returning {len(unq_json_docs)} docs.")
 
     # Cast docs back to langchain documents class.
     unq_docs = [loads(doc) for doc in unq_json_docs]
@@ -31,6 +34,7 @@ def reciprocal_rank_fusion(res: list[list], k=60) -> list[tuple[Document, float]
     Note that k is an experimentally determined constant.
     """
     # Assign score using reciprocal rank fusion formula.
+    logger.info(f"Calculating RRF scores for {len(res)} docs.")
     fused_scores = defaultdict(float)  # Initial score defaults to zero.
     for docs in res:
         for rank, doc in enumerate(docs):  # Doc rank is position in list of retrieves.
@@ -40,17 +44,17 @@ def reciprocal_rank_fusion(res: list[list], k=60) -> list[tuple[Document, float]
     # Sort docs based on their fused scores and return re-ranked docs.
     sorted_docs = sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
     reranked_results = [(loads(doc), score) for doc, score in sorted_docs]
+    logger.info(f"Returning {len(reranked_results)} re-ranked docs.")
 
     return reranked_results
 
 
-def create_rrf_chain(
-    gen_multi_query: Runnable, retriever: VectorStoreRetriever
-) -> Runnable:
+def create_rrf_chain(multi_q_chain: Runnable, ret: VectorStoreRetriever) -> Runnable:
     """
-    Create chain to retrieve docs using multi-query, do the retrieval, then dedupe and rank the results.
+    Reciprocal ranked fusion.
+
+    Retrieval based on multiple queries, then dedupe and rank the results.
     """
-    rrf_chain = (
-        gen_multi_query | retriever.map() | get_unique_union | reciprocal_rank_fusion
-    )
+    logger.info("Creating RRF chain.")
+    rrf_chain = multi_q_chain | ret.map() | get_unique_union | reciprocal_rank_fusion
     return rrf_chain
