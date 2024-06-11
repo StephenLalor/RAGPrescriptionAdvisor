@@ -13,10 +13,9 @@ from treatment_checker.query_routing.create_few_shot_prompt import (
 from treatment_checker.query_routing.query_router import QueryRouter
 
 
-def query_routing(llm: ChatOpenAI) -> Runnable:
+def get_router_chain(llm: ChatOpenAI) -> Runnable:
     logger.info("Routing query.")
     prompt = create_few_shot_prompt()
-    struct_llm = llm.with_structured_output(QueryRouter)
-    choice = RunnableLambda(choose_route)
-    router_chain = prompt | struct_llm | choice
+    struct_llm = llm.with_structured_output(QueryRouter)  # Enforce schema.
+    router_chain = prompt | struct_llm | RunnableLambda(choose_route)
     return router_chain

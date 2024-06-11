@@ -12,7 +12,7 @@ class QueryRouter(BaseModel):
     Data class specifying desired output format for query routing.
     """
 
-    datasource: Literal["drug_db", "patient_history_db"] = Field(
+    datasource: Literal["hist_chain", "diag_chain", "full_chain"] = Field(
         ...,
-        description="Select the most relevent datasource for the question.",
+        description="Select most relevent chain for question.",
     )

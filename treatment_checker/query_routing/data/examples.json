@@ -1,0 +1,42 @@
+{
+    "example_1": {
+        "question": "I need drug information for ibuprofen.",
+        "answer": "diag_chain"
+    },
+    "example_2": {
+        "question": "Is paracetamol suitable for infections?",
+        "answer": "diag_chain"
+    },
+    "example_3": {
+        "question": "Should aspirin be prescribed for headaches?",
+        "answer": "diag_chain"
+    },
+    "example_4": {
+        "question": "I need patient information for patient 001.",
+        "answer": "hist_chain"
+    },
+    "example_5": {
+        "question": "Does patient 002 have a history of flu?",
+        "answer": "hist_chain"
+    },
+    "example_6": {
+        "question": "Is aspirin suitable for patient 003?",
+        "answer": "full_chain"
+    },
+    "example_7": {
+        "question": "I will prescribe Amoxicillin for patient 001",
+        "answer": "full_chain"
+    },
+    "example_8": {
+        "question": "Patient 002 has a headache, should I prescribe ibuprofen?",
+        "answer": "full_chain"
+    },
+    "example_9": {
+        "question": "Patient 001 has a broken arm, should I prescribe warfarin?",
+        "answer": "full_chain"
+    },
+    "example_10": {
+        "question": "Patient 004 has high blood pressure, should I prescribe warfarin?",
+        "answer": "full_chain"
+    }
+}
