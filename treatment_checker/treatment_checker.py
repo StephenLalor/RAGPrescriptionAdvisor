@@ -52,7 +52,3 @@ def main(question):
     if route == "hist_chain":
         result = hist_chain.invoke(question)
     print(result)
-
-
-if __name__ == "main":
-    main("When is it best to prescribe warfarin?")

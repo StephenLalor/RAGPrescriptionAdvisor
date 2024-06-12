@@ -1,6 +1,9 @@
 Answer the following question based on the following drug information context and patient history context. Ensure that you
 consider both pieces of context in your answer. Specifically mention that you have considered both pieces of context.
 
+Ensure your answer only includes information about the patient in question, and never includes information about 
+other patients.
+
 Drug information context: {drug_info}
 
 Patient history context: {patient_hist}
