@@ -1,4 +1,4 @@
-# Treatment Checker
+# Retrieval Augmented Generation Prescription Advisor
 
 ## Overview
 This is a toy version of a system which helps diagnose patients using Retrieval Augmented Generation and Langchain.
