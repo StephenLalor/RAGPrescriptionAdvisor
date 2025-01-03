@@ -17,7 +17,7 @@ The system is divided into three distinct processes, providing 3 similar element
 ```mermaid
 flowchart LR
 
-A[Question] -->|Text| B{Semantic\nQuery Router}
+A[Question] -->|Text| B{Semantic<br>Query Router}
 B -->|Full Service| C1[RAG] -->|Hist Docs| C2[Rag-Fusion] --> C3(Answer)
 B -->|Diagnosis Advice| D1[Rag-Fusion] --> D2(Answer)
 B -->|Patient Hist| E1[Patient History] --> E2(Answer)
@@ -29,7 +29,7 @@ This process is designed to answer questions about a specific patient’s medica
 ```mermaid a
 flowchart LR
 
-A[Question] -->|Text| B[Retriever] -->|Simularity\nSearch| C[Patient\nHistory DB] -->|Doc| D[Chat Prompt] --> E[Output\nParser] --> F(Answer)
+A[Question] -->|Text| B[Retriever] -->|Simularity<br>Search| C[Patient<br>History DB] -->|Doc| D[Chat Prompt] --> E[Output<br>Parser] --> F(Answer)
 ```
 
 #### Diagnosis Advice Process:
@@ -38,16 +38,16 @@ This process provides suggestions for a drug to diagnose based on symptoms from 
 ```mermaid a
 flowchart LR
 
-A[Question] -->|Text| B[Query\nTransformation]-->|Query 1| L[Query\nTransformation]
-B[Query\nTransformation]-->|Query 2| L[Query\nTransformation]
-B[Query\nTransformation]-->|Query 3| L[Query\nTransformation]
-L[Retriever] -->|Simularity\nSearch| C[Patient\nHistory DB]
-L[Retriever] -->|Simularity\nSearch| C[Patient\nHistory DB]
-L[Retriever] -->|Simularity\nSearch| C[Patient\nHistory DB]
-C[Patient\nHistory DB] -->|Doc| H{Reciprocal\nRank Fusion}
-C[Patient\nHistory DB] -->|Doc| H{Reciprocal\nRank Fusion}
-C[Patient\nHistory DB] -->|Doc| H{Reciprocal\nRank Fusion}
-H -->|Best Docs| D[Chat Prompt] --> E[Output\nParser] --> F(Answer)
+A[Question] -->|Text| B[Query <br> Transformation]-->|Query 1| L[Query<br>Transformation]
+B[Query<br>Transformation]-->|Query 2| L[Query<br>Transformation]
+B[Query<br>Transformation]-->|Query 3| L[Query<br>Transformation]
+L[Retriever] -->|Simularity<br>Search| C[Patient<br>History DB]
+L[Retriever] -->|Simularity<br>Search| C[Patient<br>History DB]
+L[Retriever] -->|Simularity<br>Search| C[Patient<br>History DB]
+C[Patient<br>History DB] -->|Doc| H{Reciprocal<br>Rank Fusion}
+C[Patient<br>History DB] -->|Doc| H{Reciprocal<br>Rank Fusion}
+C[Patient<br>History DB] -->|Doc| H{Reciprocal<br>Rank Fusion}
+H -->|Best Docs| D[Chat Prompt] --> E[Output<br>Parser] --> F(Answer)
 ```
 
 #### Full Service Process:
@@ -57,8 +57,8 @@ This process makes drug recommendations based on the patient’s medical history
 ```mermaid  a
 flowchart LR
 
-A[Question] -->|Text| B[Patient\nIdentification] -->|Patient| B1[Patient\nHist DB]
-A[Question] -->|Text| C[Multi\nQuery] -->|Many Questions| D[Reciprocal\nRank\nFusion]
+A[Question] -->|Text| B[Patient<br>Identification] -->|Patient| B1[Patient<br>Hist DB]
+A[Question] -->|Text| C[Multi<br>Query] -->|Many Questions| D[Reciprocal<br>Rank<br>Fusion]
 D -->|Drug DB Context| E[Prompt]
 A -->|Orig Question| E[Prompt]
 B1 -->|Patient Hist DB Context| E[Prompt]
@@ -69,23 +69,23 @@ E --> E2[Chat Model] --> E3[Parser] --> E4[Answer]
 ```mermaid  a
 flowchart LR
 
-A[Question] -->|Text| B[Retriever] --> C[Patient ID\nPrompt] --> D[Output\nParser]
+A[Question] -->|Text| B[Retriever] --> C[Patient ID<br>Prompt] --> D[Output<br>Parser]
 ```
 
 *Multi Query Sub-Process*
 ```mermaid  a
 flowchart LR
 
-A[Question] -->|Text| B[Query\nTransformation]-->|Query 1| L[Query\nTransformation]
-B[Query\nTransformation]-->|Query 2| L[Query\nTransformation]
-B[Query\nTransformation]-->|Query 3| L(OUT)
+A[Question] -->|Text| B[Query<br>Transformation]-->|Query 1| L[Query<br>Transformation]
+B[Query<br>Transformation]-->|Query 2| L[Query<br>Transformation]
+B[Query<br>Transformation]-->|Query 3| L(OUT)
 ```
 *Reciprocal Rank Fusion Sub-Process*
 ```mermaid  a
 flowchart LR
 
-a1[IN] -->|Query 1| L[Retriever] -->|Simularity\nSearch| C[DB]
-a2[IN] -->|Query 2| L[Retriever] -->|Simularity\nSearch| C[DB]
-a3[IN] -->|Query 3| L[Retriever] -->|Simularity\nSearch| C[DB]
+a1[IN] -->|Query 1| L[Retriever] -->|Simularity<br>Search| C[DB]
+a2[IN] -->|Query 2| L[Retriever] -->|Simularity<br>Search| C[DB]
+a3[IN] -->|Query 3| L[Retriever] -->|Simularity<br>Search| C[DB]
 ```
 
